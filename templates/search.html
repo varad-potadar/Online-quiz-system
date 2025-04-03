@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        #canvas{
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h3 style="text-align:center; margin-top:30px">Search Results</h3><br>
+    </div>
+    <div id="canvas">
+        <table class="table table-striped" style="border: 1px;">
+            <thead>
+                <tr>
+                    <th scope="col">Subjects</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subject in subjects %}
+                <tr>
+                <td class="text-center">{{ subject.id }}.</td>
+                <td class="text-left">{{ subject.name }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5" class="text-center text-muted">No Subjects</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class="table table-striped" style="border: 1px;">
+            <thead>
+                <tr>
+                    <th scope="col">Chapters</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for chapter in chapters %}
+                <tr>
+                    <td class="text-center">{{ chapter.id }}.</td>
+                    <td class="text-left">{{ chapter.name }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5" class="text-center text-muted">No Chapters</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>

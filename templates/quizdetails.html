@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Details</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        #form-body{
+            width: 400px;
+            height: auto;
+            margin-top: 50px;
+            padding:5px
+        }
+        span {
+            display: block;
+            overflow: hidden;
+            padding: 0px 4px 0px 6px;
+        }
+        .form-control{
+          padding: 8px 12px;
+          min-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="canvas">
+            <div id="form-body" class="card p-3 shadow">
+                <form action="/quizdetails/{{quiz_id}}" method="POST">
+                    <h2 style="text-align:center; margin-top:10px">Quiz Details</h2><br>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <label for="id" class="form-label mb-0 mb-3" style="flex: 0.8; text-align: right; padding-right: 15px;">ID </label>
+                          <div class="form-control" style="flex: 2; text-align: center; height: 38px;" id="id">
+                            {{ quiz.id }}
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <label for="subject" class="form-label mb-0 mb-3" style="flex: 1; text-align: right; padding-right: 15px;">Subject </label>
+                          <div class="form-control" style="flex: 2; text-align: center; height: 38px;" id="subject">
+                            {{ subject.name }}
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <label for="chapter" class="form-label mb-0 mb-3" style="flex: 1; text-align: right; padding-right: 15px;">Chapter </label>
+                          <div class="form-control" style="flex: 2; text-align: center; height: 38px;" id="chapter">
+                            {{ chapter.name }}
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <label for="questions" class="form-label mb-0 mb-3" style="flex: 1; text-align: right; padding-right: 15px;">No. of Questions </label>
+                          <div class="form-control" style="flex: 2; text-align: center; height: 38px;" id="questions">
+                            {{ q_count }}
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <label for="date" class="form-label mb-0 mb-3" style="flex: 1; text-align: right; padding-right: 15px;">Scheduled date </label>
+                          <div class="form-control" style="flex: 2; text-align: center; height: 38px;" id="date">
+                            {{ quiz.date_of_quiz }}
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <label for="time" class="form-label mb-0 mb-3" style="flex: 1; text-align: right; padding-right: 15px;">Duration </label>
+                          <div class="form-control" style="flex: 2; text-align: center; height: 38px;" id="time">
+                            {{ quiz.time_duration }}
+                          </div>
+                        </div>
+                    </div>
+                           
+                    <div style="text-align : center;">
+                        <a href="/quiz_management" type="submit" class="btn btn-primary">Close</a><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
